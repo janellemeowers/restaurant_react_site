@@ -1,0 +1,94 @@
+/* note menu items css under menuitem.css */
+
+.app__specialMenu {
+  flex-direction: column;
+  background: var(--color-black);
+}
+
+.app__specialMenu-title {
+  text-align: center;
+  font-size: 42px;
+}
+
+.app__specialMenu-menu {
+  width: 100%;
+  margin-bottom: -0.5rem;
+
+  /* everything in one row */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* //specify so u can change for mobile */
+  flex-direction: row;
+}
+
+/* wine or cocktail heading */
+.app__specialMenu-menu_heading {
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 41px;
+  line-height: 58.5px;
+  letter-spacing: 0.04em;
+  color: var(--color-white);
+}
+
+.app__specialMenu-menu_wine,
+.app__specialMenu-menu_cocktails {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+/* image div */
+.app__specialMenu-menu_img {
+  width: 400px;
+  margin: 0 2rem;
+}
+
+/* image to be 100% of parent div */
+.app__specialMenu-menu_img img {
+  width: 100%;
+  height: auto;
+}
+
+.app__specialMenu_menu_items {
+  display: flex;
+  flex-direction: column;
+
+  margin: 3rem 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 2000px) {
+  .app__specialMenu-menu_img {
+    width: 350px;
+  }
+
+  .app__specialMenu-menu_img img {
+    height: 520px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  /* just so everything aligns in column 100% */
+  .app__specialMenu-menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .app__specialMenu-menu_img {
+    margin: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__specialMenu-menu_img {
+    width: 100%;
+  }
+
+  .app__specialMenu-menu_heading {
+    font-size: 35px;
+    line-height: 48.5px;
+  }
+}

@@ -1,0 +1,162 @@
+.app__navbar {
+  width: 100%;
+  display: flex;
+  /*aligns x axis with space between the image and list items*/
+  justify-content: space-between;
+  /*aligns vertically in div to center*/
+  align-items: center;
+  /*from index.css for common colors*/
+  background: var(--color-black);
+
+  padding: 1rem 2rem;
+}
+
+.app__navbar-logo {
+  display: flex;
+  /*at start*/
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.app__navbar-logo img {
+  width: 120px;
+}
+
+/* navbar links group */
+.app__navbar-links {
+  /* this means the size of all of the other elements will have the same width as their content,
+     but the element with flex: 1 will have the remaining full space given to it. */
+  flex: 1;
+  /*makes them horiz*/
+  display: flex;
+  /*moves to center*/
+  justify-content: center;
+  /* align center vertical*/
+  align-items: center;
+
+  /* removebullets */
+  list-style: none;
+}
+
+/*individual links*/
+.app__navbar-links li {
+  /* l/r margin 1rem */
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.app__navbar-links li:hover {
+  color: var(--color-grey);
+}
+
+.app__navbar-login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* right nav links */
+.app__navbar-login a {
+  margin: 0 1.5rem;
+  text-decoration: none;
+  /* for hover effect below */
+  transition: 0.5s ease;
+}
+
+/* gold underline*/
+.app__navbar-login a:hover {
+  border-bottom: 1px solid var(--color-golden);
+}
+
+/*empty div to have line seperator */
+.app__navbar-login div {
+  width: 0.5px;
+  height: 30px;
+  background-color: var(--color-grey);
+}
+
+/*hide hamburger for desktop*/
+.app__navbar-smallscreen {
+  display: none;
+}
+
+/*menu overlay for mobile*/
+.app__navbar-smallscreen_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*is full screen*/
+  height: 100vh;
+  background-color: var(--color-black);
+  transition: 0.5s ease;
+
+  flex-direction: column;
+  z-index: 5;
+}
+
+/*menu icon "x" */
+.app__navbar-smallscreen_overlay .overlay__close {
+  font-size: 27px;
+  color: var(--color-golden);
+  cursor: pointer;
+
+  /*top right fixed*/
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.app__navbar-smallscreen_links {
+  list-style: none;
+}
+
+/* target each indiv link */
+.app__navbar-smallscreen_links li {
+  margin: 2rem;
+  cursor: pointer;
+  color: var(--color-golden);
+  font-size: 2rem;
+  text-align: center;
+  font-family: var(--font-base);
+}
+
+/* hover */
+.app__navbar-smallscreen_links li:hover {
+  color: var(--color-white);
+}
+
+/* SCREENS */
+@media screen and (max-width: 2000px) {
+  .app__navbar-logo img {
+    /* make image a bit bigger */
+    width: 175px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  /*hide main nav when under 1150*/
+  .app__navbar-links {
+    display: none;
+  }
+  /*show mobile nav*/
+  .app__navbar-smallscreen {
+    display: flex;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 650px) {
+  .app__navbar {
+    padding: 1rem;
+  }
+
+  .app__navbar-login {
+    display: none;
+  }
+
+  .app__navbar-logo img {
+    /* make image a bit bigger */
+    width: 110px;
+  }
+}

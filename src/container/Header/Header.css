@@ -1,0 +1,26 @@
+.app__header {
+  background-color: var(--color-black);
+  margin: 0;
+}
+
+.app__header-h1 {
+  font-family: var(--font-base);
+  color: var(--color-golden);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  /* text-transform: uppercase; */
+  line-height: 100px;
+  font-size: 90px;
+}
+
+.app__header-img img {
+  width: 80%;
+}
+
+.app__wrapper_img img {
+  max-width: 80%;
+}
+
+.app__wrapper_img img:hover {
+  transform: scale(1.02);
+}

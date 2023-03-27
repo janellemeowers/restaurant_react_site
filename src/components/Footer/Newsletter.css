@@ -1,0 +1,76 @@
+.app__newsletter {
+  padding: 2rem 4rem;
+  /* gold border*/
+  border: 0.5px solid var(--color-golden);
+  background: var(--color-black);
+}
+
+.app__newsletter-heading {
+  text-align: center;
+}
+
+/* input div, row */
+.app__newsletter-input {
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+/* actual input*/
+.app__newsletter-input input {
+  width: 520px;
+  border: 1px solid var(--color-golden);
+  /*makes border rounded*/
+  border-radius: 5px;
+
+  font-size: 1rem;
+  font-family: var(--font-base);
+  color: var(--color-white);
+
+  margin-right: 2rem;
+  /*makes input space bigger*/
+  padding: 0.75rem 1rem;
+  background: var(--color-black);
+}
+
+.app__newsletter-input button {
+  width: max-content;
+}
+
+/*biggest screens 2000+*/
+@media screen and (min-width: 2000px) {
+  .app__newsletter-input input {
+    font-size: 2rem;
+  }
+}
+
+/*bigger tablets*/
+@media screen and (max-width: 990px) {
+  .app__newsletter-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .app__newsletter-input input {
+    /*add margin so button is 2rem below */
+    margin: 0 0 2rem 0;
+    /*input doesn't extend screen*/
+    width: 100%;
+  }
+}
+
+/*mobile*/
+@media screen and (max-width: 650px) {
+  .app__newsletter {
+    /*removes l r padding*/
+    padding: 2rem 0;
+    /*don't need border*/
+    border: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .app__newsletter-heading h1 {
+    font-size: 32px;
+    line-height: 50px;
+  }
+}

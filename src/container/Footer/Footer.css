@@ -1,0 +1,112 @@
+.app__footer {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  background: var(--color-black);
+  padding-top: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.app__footer-links {
+  width: 100%;
+  display: flex;
+  /* evenly distribute */
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-top: 5rem;
+}
+
+.app__footer-links_contact,
+.app__footer-links_logo,
+.app__footer-links_work {
+  /* so they take equal space, flex 1 */
+  flex: 1;
+  margin: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* first image (logo) */
+.app__footer-links_logo img:first-child {
+  width: 120px;
+  margin-bottom: 5px;
+}
+
+/* ODD ROWS , will give space after each hour groups
+(h1 HOURS (1, odd child but not p so not counted)
+mon/fri (2, even)
+ 10AM-10PM (odd p so =  margin)  */
+.app__footer-links_work p:nth-child(2n + 1) {
+  margin-bottom: 1rem;
+}
+
+.app__footer-links_icons {
+  margin-top: 0.5rem;
+}
+
+/*indiv icons*/
+.app__footer-links_icons svg {
+  color: var(--color-white);
+
+  margin: 0.5rem;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.app__footer-headtext {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  font-size: 30px;
+
+  margin-bottom: 1rem;
+}
+
+.footer__copyright p {
+  margin-top: 4rem;
+  font-size: 14px;
+}
+
+/* make column */
+@media screen and (max-width: 1150px) {
+  .app__footer-links {
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .app__footer-headtext {
+    font-size: 40px;
+  }
+
+  .app__footer-links_contact,
+  .app__footer-links_logo,
+  .app__footer-links_work {
+    /* margin: 2rem 0; */
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__footer {
+    padding: 0;
+  }
+}
+
+/* make logo smaller */
+@media screen and (max-width: 350px) {
+  .app__footer-links_logo img:first-child {
+    width: 80%;
+  }
+}
